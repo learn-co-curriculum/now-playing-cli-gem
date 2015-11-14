@@ -14,7 +14,7 @@ Gem::Specification.new do |spec|
   spec.executables   = ["now-playing"]
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.name          = "now-playing-cli-gem"
-  spec.require_paths = ["lib"]
+  spec.require_paths = ["lib", "lib/now_playing"]
   spec.version       = NowPlaying::VERSION
   spec.license       = "MIT"
 
