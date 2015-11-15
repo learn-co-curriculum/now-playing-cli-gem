@@ -33,7 +33,7 @@ class NowPlaying::Movie
     def self.scrape_now_playing
       doc = Nokogiri::HTML(open('http://www.imdb.com/movies-in-theaters/'))
       names = doc.search("h4[itemprop='name'] a[itemprop='url']")
-      names.collect{|e| new(e.text, "http://imdb.com#{e.attr("href").split("?").first.strip}")}
+      names.collect{|e| new(e.text.strip, "http://imdb.com#{e.attr("href").split("?").first.strip}")}
     end
 
     def plot_summary_doc

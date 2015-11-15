@@ -1,5 +1,6 @@
 # Now::Playing::Cli::Gem
 
+[![Code Climate](https://codeclimate.com/github/learn-co-curriculum/now-playing-cli-gem/badges/gpa.svg)](https://codeclimate.com/github/learn-co-curriculum/now-playing-cli-gem)
 
 ## Installation
 

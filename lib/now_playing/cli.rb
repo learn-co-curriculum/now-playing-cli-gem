@@ -7,7 +7,7 @@ class NowPlaying::CLI
     puts ""
     puts "************* Now Playing in Theatres *************"
     puts ""
-    Movie.all.each.with_index(1) do |movie, i|
+    NowPlaying::Movie.all.each.with_index(1) do |movie, i|
       puts "#{i}. #{movie.name}"
     end
     puts ""
@@ -39,11 +39,11 @@ class NowPlaying::CLI
       if input == "list"
         list
       elsif input.to_i == 0
-        if movie = Movie.find_by_name(input)
+        if movie = NowPlaying::Movie.find_by_name(input)
           print_movie(movie)
         end
       elsif input.to_i > 0
-        if movie = Movie.find(input.to_i)
+        if movie = NowPlaying::Movie.find(input.to_i)
           print_movie(movie)
         end
       end
