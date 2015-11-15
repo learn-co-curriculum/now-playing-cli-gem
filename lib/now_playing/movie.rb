@@ -1,5 +1,10 @@
-class Movie
-  attr_accessor :name, :url
+class NowPlaying::Movie
+  attr_accessor :name, :url, :summary, :stars
+
+  def initialize(name = nil, url = nil)
+    @name = name
+    @url = url
+  end
 
   def self.all
     @@all ||= scrape_now_playing
@@ -16,17 +21,6 @@ class Movie
     end
   end
 
-  def self.scrape_now_playing
-    doc = Nokogiri::HTML(open('http://www.imdb.com/movies-in-theaters/'))
-    names = doc.search("h4[itemprop='name'] a[itemprop='url']")
-    names.collect{|e| Movie.new(e.text, "http://imdb.com#{e.attr("href").split("?").first.strip}")}
-  end
-
-  def initialize(name = nil, url = nil)
-    @name = name
-    @url = url
-  end
-
   def summary
     @summary ||= plot_summary_doc.search("p.plotSummary").text.strip
   end
@@ -36,6 +30,12 @@ class Movie
   end
 
   private
+    def self.scrape_now_playing
+      doc = Nokogiri::HTML(open('http://www.imdb.com/movies-in-theaters/'))
+      names = doc.search("h4[itemprop='name'] a[itemprop='url']")
+      names.collect{|e| new(e.text, "http://imdb.com#{e.attr("href").split("?").first.strip}")}
+    end
+
     def plot_summary_doc
       @plot_summary_doc ||= Nokogiri::HTML(open("#{self.url}plotsummary"))
     end
