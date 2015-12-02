@@ -27,3 +27,5 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/learn-
 ## License
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
+
+<a href='https://learn.co/lessons/now-playing-cli-gem' data-visibility='hidden'>View this lesson on Learn.co</a>
