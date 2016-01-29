@@ -28,4 +28,4 @@ Bug reports and pull requests are welcome on GitHub at https://github.com/learn-
 
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
 
-<a href='https://learn.co/lessons/now-playing-cli-gem' data-visibility='hidden'>View this lesson on Learn.co</a>
+<p data-visibility='hidden'>View <a href='https://learn.co/lessons/now-playing-cli-gem' title='Now::Playing::Cli::Gem'>Now::Playing::Cli::Gem</a> on Learn.co and start learning to code for free.</p>
