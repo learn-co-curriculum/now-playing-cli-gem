@@ -26,7 +26,7 @@ class NowPlaying::Movie
   end
 
   def stars
-    @stars ||= doc.search("div[itemprop='actors'] span[itemprop='name']").collect{|e| e.text.strip}.join(", ")
+    @stars ||= doc.search("span[itemprop='actors'] span[itemprop='name']").collect{|e| e.text.strip}.join(", ")
   end
 
   private
