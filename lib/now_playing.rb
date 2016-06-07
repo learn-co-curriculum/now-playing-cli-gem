@@ -2,9 +2,9 @@ require 'open-uri'
 require 'pry'
 require 'nokogiri'
 
-require "now_playing/version"
-require "now_playing/cli"
-require "now_playing/movie"
+require_relative "now_playing/version"
+require_relative "now_playing/cli"
+require_relative "now_playing/movie"
 
 module NowPlaying
 end
