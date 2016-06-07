@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
 
-require 'now_playing'
+require_relative '../lib/now_playing'
 
 NowPlaying::CLI.new.call
