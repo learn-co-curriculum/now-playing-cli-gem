@@ -22,7 +22,7 @@ class NowPlaying::Movie
   end
 
   def summary
-    @summary ||= plot_summary_doc.search("p.plotSummary").text.strip
+    @summary ||= plot_summary_doc.search("#plot-summaries-content p").text.strip
   end
 
   def stars
