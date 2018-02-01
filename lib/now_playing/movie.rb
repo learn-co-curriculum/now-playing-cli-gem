@@ -22,11 +22,11 @@ class NowPlaying::Movie
   end
 
   def summary
-    @summary ||= plot_summary_doc.search("p.plotSummary").text.strip
+    @summary ||= plot_summary_doc.search("#plot-summaries-content p").text.strip
   end
 
   def stars
-    @stars ||= doc.search("div[itemprop='actors'] span[itemprop='name']").collect{|e| e.text.strip}.join(", ")
+    @stars ||= doc.search("#titleCast span[itemprop='name']").collect{|e| e.text.strip}.join(", ")
   end
 
   private
